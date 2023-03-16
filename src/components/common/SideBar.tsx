@@ -6,14 +6,14 @@ import logo from '../../assets/imgs/logo-mp3.svg';
 import { SideBarMenu, SideBarMenu2 } from '../../data/menuSidebar';
 
 const noActive =
-  'text-white hover:bg-[#3a3344] cursor-pointer font-[700] flex justify-center xl:justify-start items-center gap-2  py-[9px] xl:px-[30px]';
+  'text-white hover:bg-[#3a3344] cursor-pointer font-[700] flex justify-center lg:justify-start items-center gap-2  py-[9px] lg:px-[30px]';
 const active =
-  'text-white bg-[#3a3344] border-l-[3px] rounded-sm border-[#9b4de0]  cursor-pointer font-[700] flex justify-center xl:justify-start items-center gap-2 py-[9px] xl:px-[30px]';
+  'text-white bg-[#3a3344] border-l-[3px] rounded-sm border-[#9b4de0]  cursor-pointer font-[700] flex justify-center lg:justify-start items-center gap-2 py-[9px] lg:px-[30px]';
 const SideBar: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className='bg-[#231b2e] w-[70px] xl:w-[240px]  max-h-screen h-full '>
-      <div className='py-4 block xl:hidden'>
+    <div className='bg-[#231b2e] w-[70px] lg:w-[240px]  max-h-screen h-full '>
+      <div className='py-4 block lg:hidden'>
         <div className='w-full flex justify-center '>
           <img
             onClick={() => navigate('')}
@@ -33,7 +33,7 @@ const SideBar: React.FC = () => {
                 >
                   <menu.icon fontSize={20} />
                   {menu.img && (
-                    <img src={menu.img} className='hidden xl:block' alt='' />
+                    <img src={menu.img} className='hidden lg:block' alt='' />
                   )}
                 </NavLink>
               </li>
@@ -215,7 +215,7 @@ const SideBar: React.FC = () => {
           </div>
         </nav>
       </div>
-      <div className='hidden xl:block'>
+      <div className='hidden lg:block'>
         {/* logo */}
         <div className='h-[70px]  w-full flex items-center py-0 px-[28px]'>
           <img

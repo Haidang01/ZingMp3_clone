@@ -79,7 +79,7 @@ const ItemPlayList: React.FC<any> = ({ song }) => {
         </div>
         <div className=''>
           <span className='flex items-center justify-between gap-2'>
-            <span className='flex  text-[14px] font-[500]'>
+            <span className='flex  text-[10px] lg:text-[14px] font-light lg:font-[500]'>
               {song?.title && truncateString(song?.title, 23)}
             </span>
             {song.streamingStatus === 2 ? (
@@ -95,7 +95,7 @@ const ItemPlayList: React.FC<any> = ({ song }) => {
               ''
             )}
           </span>
-          <h3 className='text-[13px] hover:underline cursor-pointer hover:text-[#c273ed] text-[#ffffff80] h-'>
+          <h3 className=' text-[8px] lg:text-[10px] hover:underline cursor-pointer hover:text-[#c273ed] text-[#ffffff80] '>
             {song?.artistsNames && truncateString(song?.artistsNames, 23)}
           </h3>
         </div>
@@ -103,23 +103,23 @@ const ItemPlayList: React.FC<any> = ({ song }) => {
       {/* right */}
       <div className='flex justify-between items-center flex-auto'>
         <div>
-          <span className='text-[13px] hover:underline cursor-pointer hover:text-[#c273ed] text-[#ffffff80]'>
+          <span className=' text-[8px] lg:text-[13px] hover:underline cursor-pointer hover:text-[#c273ed] text-[#ffffff80]'>
             {song?.album?.title && truncateString(song?.album?.title, 23)}
           </span>
         </div>
         <div className=''>
           {!showHoverIcon ? (
             <div className='time '>
-              <span className='text-[13px]  text-[#ffffff80]'>
+              <span className=' text-[10px] lg:text-[13px]  text-[#ffffff80]'>
                 {song.duration && convertTimeSong(song.duration)}
               </span>
             </div>
           ) : (
             <div className='icons'>
-              <span className='text-[13px] flex gap-3 text-[#fff]'>
+              <span className='text-[10px] lg:text-[13px] flex gap-1 lg:gap-3 text-[#fff]'>
                 <div
                   title='Phát cùng lời bài hát '
-                  className='w-[30px] cursor-pointer hover:bg-[#2d2536] h-[30px] rounded-full flex items-center bg-[#3a3344] justify-center'
+                  className=' w-[30px] cursor-pointer hover:bg-[#2d2536] h-[30px] rounded-full flex items-center bg-[#3a3344] justify-center'
                 >
                   <TbMicrophone2 title='Xem thêm' fontSize={'18px'} />
                 </div>

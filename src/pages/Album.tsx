@@ -36,9 +36,9 @@ const Album = (props: Props) => {
       ) : (
         <>
           <div ref={divRef} className='h-16'></div>
-          <div className=' w-full  mb-[90px] mx-2 xl:flex block text-white  h-full bg-[#170f23] '>
+          <div className=' w-full  mb-[90px] mx-0 sm:mx-2   lg:flex block text-white  h-full bg-[#170f23] '>
             <div className='w-[320px] mt-3 min-w-[200px] sticky top-10 flex-none '>
-              <div className='overflow-hidden   xl:w-[300px] hover:opacity-80  rounded-lg cursor-pointer '>
+              <div className='overflow-hidden   lg:w-[300px] hover:opacity-80  rounded-lg cursor-pointer '>
                 <div
                   onMouseOver={() => setIsHoverAlbum(true)}
                   onMouseOut={() => setIsHoverAlbum(false)}
@@ -46,13 +46,13 @@ const Album = (props: Props) => {
                     dispatch(setCurSongId(playlist.song[0].encodeId)) &&
                       dispatch(setPlayed(true));
                   }}
-                  className='relative  xl:w-[300px] xl-h-[300px] '
+                  className='relative  lg:w-[300px] xl:h-[300px] '
                 >
                   <img
                     src={playlist?.thumbnailM}
                     className={`${
                       isHoverAlbum && 'scale-110 rounded-lg'
-                    } transition duration-500 ease-in-out hover:scale-110  w-full sm:w-[200px]  rounded-lg cursor-pointer  xl:w-[300px] xl-h-[300px] object-cover`}
+                    } transition duration-500 ease-in-out hover:scale-110  w-full sm:w-[200px]  rounded-lg cursor-pointer  lg:w-[300px] xl-h-[300px] object-cover`}
                     alt='img'
                   />
                   {isHoverAlbum && (
@@ -86,8 +86,7 @@ const Album = (props: Props) => {
                 <div className='flex  flex-col justify-center items-center mt-3 gap-2'>
                   <button
                     onClick={() => {
-                      dispatch(setCurSongId(playlist.song[0].encodeId)) &&
-                        dispatch(setPlayed(true));
+                      dispatch(setCurSongId(playlist.song[0].encodeId));
                     }}
                     className='bg-[#a254cc] my-1 hover:bg-[#9b4de0] flex justify-center items-center gap-1 rounded-3xl w-[200px] h-[36px]'
                   >
@@ -123,9 +122,9 @@ const Album = (props: Props) => {
             </div>
             {/* content right */}
             <div className='w-full  flex-auto py-2 '>
-              <div className='mb-2'>
+              <div className='mb-2 px-2 lg:px-1'>
                 <span className='text-[#ffffff80] text-[14px]'>Lời tựa</span>
-                <span className='text-[14px] mx-1'>
+                <span className='text-[14px] px-2 lg:mx-1'>
                   {truncateString(playlist?.description, 250)}
                 </span>
               </div>

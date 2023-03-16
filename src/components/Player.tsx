@@ -70,6 +70,9 @@ const Player = (props: Props) => {
   const [url, playLoading] = useGetUrlSong(currentSongId);
 
   useEffect(() => {
+    played && dispatch(setPlayed(true));
+  }, [currentSongId]);
+  useEffect(() => {
     data && setSong(data);
     if (currentSongId && !listSongHeard.find(item => item === currentSongId)) {
       dispatch(setSongHeard(currentSongId));
@@ -80,13 +83,13 @@ const Player = (props: Props) => {
   useEffect(() => {
     if (url) {
       audioRel.current.src = url[128];
-      played &&
-        audioRel.current.play().then(() => {
-          dispatch(
-            setDuration(convertTimeSong(Math.floor(audioRel.current.duration))),
-          );
-        });
     }
+    played &&
+      audioRel.current.play().then(() => {
+        dispatch(
+          setDuration(convertTimeSong(Math.floor(audioRel.current.duration))),
+        );
+      });
   }, [url]);
 
   // display duration song
@@ -164,15 +167,13 @@ const Player = (props: Props) => {
   const handlePrevSong = () => {
     audioRel.current.currentTime = 0;
   };
-  useEffect(() => {
-    audioRel.current.onended = () => {
-      if (isRepeat == false) {
-        listSongId.length > 0 ? handleNextSong() : dispatch(setPlayed(false));
-      } else {
-        audioRel.current.play();
-      }
-    };
-  }, [isRepeat]);
+  audioRel.current.onended = () => {
+    if (isRepeat == false) {
+      listSongId.length > 0 ? handleNextSong() : dispatch(setPlayed(false));
+    } else {
+      audioRel.current.play();
+    }
+  };
   return (
     <div className='h-full flex   border border-[#ffffff1a] text-white px-6 py-2'>
       {/* left */}
@@ -192,7 +193,7 @@ const Player = (props: Props) => {
           />
         )}
 
-        <div className='flex min-w-[120px] flex-col max-w-[216px] xl:w-[180px]'>
+        <div className='flex min-w-[120px] flex-col max-w-[216px] lg:w-[180px]'>
           <a href=''>
             <span className='text-[14px] font-[500]'>
               {song?.title && truncateString(song?.title, 22)}
@@ -202,7 +203,7 @@ const Player = (props: Props) => {
             <a href=''>{song?.artistsNames}</a>
           </span>
         </div>
-        <div className='xl:flex hidden gap-2 w-[80px] '>
+        <div className='lg:flex hidden gap-2 w-[80px] '>
           <div
             onClick={() => setLike(prev => !prev)}
             className='w-[35px] cursor-pointer h-[35px] rounded-full flex items-center hover:bg-[#3a3344] justify-center'
@@ -292,11 +293,11 @@ const Player = (props: Props) => {
             />
           </div>
         </div>
-        <div className='xl:flex hidden  h-full mt-2 items-center gap-3 justify-center '>
+        <div className='lg:flex hidden  h-full mt-2 items-center gap-3 justify-center '>
           <span className='text-[12px] timeLeft font-medium  text-[#ffffff4d] '>
             00:00
           </span>
-          <div className=' xl:w-[386px] w-full'>
+          <div className=' lg:w-[386px] w-full'>
             <div className='w-full duration-bar flex items-center relative h-[3px] cursor-pointer rounded bg-[#ffffff4d]'>
               <div
                 ref={thumbRel}
@@ -311,13 +312,13 @@ const Player = (props: Props) => {
       </div>
       {/* right */}
       <div className='sm:flex hidden w-[30%] items-center justify-end gap-2'>
-        <div className='w-[35px] hidden xl:flex h-[35px] rounded-full  cursor-pointer items-center hover:bg-[#3a3344] justify-center'>
+        <div className='w-[35px] hidden lg:flex h-[35px] rounded-full  cursor-pointer items-center hover:bg-[#3a3344] justify-center'>
           <MdOutlineLibraryMusic fontSize={'19px'} />
         </div>
-        <div className='w-[35px] hidden xl:flex h-[35px] cursor-pointer rounded-full  items-center hover:bg-[#3a3344] justify-center'>
+        <div className='w-[35px] hidden lg:flex h-[35px] cursor-pointer rounded-full  items-center hover:bg-[#3a3344] justify-center'>
           <TbMicrophone2 title='Xem lời bài hát ' fontSize={'19px'} />
         </div>
-        <div className='w-[35px] hidden xl:flex cursor-pointer h-[35px] rounded-full  items-center hover:bg-[#3a3344] justify-center'>
+        <div className='w-[35px] hidden lg:flex cursor-pointer h-[35px] rounded-full  items-center hover:bg-[#3a3344] justify-center'>
           <FaRegWindowRestore title='Chế độ cửa sổ' fontSize={'19px'} />
         </div>
         <div

@@ -37,7 +37,7 @@ const Radio = ({ playList }: Props) => {
   return (
     <div>
       <TitleSection title={playList?.title} />
-      <div className='py-4 xl:w-[900px] lg:w-[700px] overflow-hidden flex-row   mx-auto pt-5 '>
+      <div className='py-4 lg:w-[900px] lg:w-[700px] overflow-hidden flex-row   mx-auto pt-5 '>
         <Slider {...settings}>
           {playList?.items?.map(item => (
             <RadioItem key={item.id} item={item} />

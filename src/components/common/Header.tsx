@@ -18,9 +18,9 @@ const Header: React.FC = () => {
         </button>
         <form
           action=''
-          className='max-w-[400px] sm:w-[350px] xl:w-[430px] mx-3 '
+          className='max-w-[400px] sm:w-[350px] lg:w-[430px] mx-3 '
         >
-          <div className='bg-[#30283a] h-[40px] rounded-3xl w-full xl:w-[410px] flex'>
+          <div className='bg-[#30283a] h-[40px] rounded-3xl w-full lg:w-[410px] flex'>
             <button className='h-full px-3'>
               <BsSearch fontSize={'19px'} className='hover:text-gray-300 ' />
             </button>
@@ -38,8 +38,8 @@ const Header: React.FC = () => {
         </form>
       </div>
       {/* right */}
-      <div className=' justify-center flex gap-1 xl:gap-3'>
-        <div className='xl:flex hidden  cursor-pointer hover:text-[#9b4de0] bg-[#30283a] text-[#c273ed] w-[190px] h-[40px] rounded-3xl text-[14px]  items-center py-[10px] px-[24px] gap-1'>
+      <div className=' justify-center flex gap-1 lg:gap-3'>
+        <div className='lg:flex hidden  cursor-pointer hover:text-[#9b4de0] bg-[#30283a] text-[#c273ed] w-[190px] h-[40px] rounded-3xl text-[14px]  items-center py-[10px] px-[24px] gap-1'>
           <i className='icon'>
             <svg width='20' height='20' viewBox='0 0 20 20' fill='none'>
               <path
@@ -65,11 +65,11 @@ const Header: React.FC = () => {
         </div>
         <div
           title='Chủ đề'
-          className='w-[40px]   hover:bg-[#2d2536] cursor-pointer filter-[.9] h-[40px] py-0 px-2 bg-[#30283a] rounded-full justify-center xl:flex items-center'
+          className='w-[40px]   hover:bg-[#2d2536] cursor-pointer filter-[.9] h-[40px] py-0 px-2 bg-[#30283a] rounded-full justify-center lg:flex items-center'
         >
           <img
             src={chude}
-            className='w-[23px] h-[24px] mt-2 xl:mt-0'
+            className='w-[23px] h-[24px] mt-2 lg:mt-0'
             alt='chude'
           />
         </div>

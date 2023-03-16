@@ -15,7 +15,7 @@ const ChooseToday: React.FC<Props> = ({ playList }) => {
   return (
     <div className='mt-12 px-2'>
       <TitleSection title={playList?.title} />
-      <div className='grid px-3 xl:px-0 grid-cols-2 xl:grid-cols-4 items-center justify-center gap-5 '>
+      <div className='grid px-3 lg:px-0 grid-cols-2 lg:grid-cols-4 items-center justify-center gap-5 '>
         {playList &&
           playList?.items?.length > 0 &&
           playList?.items

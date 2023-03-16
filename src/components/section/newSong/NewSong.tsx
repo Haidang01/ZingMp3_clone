@@ -37,7 +37,7 @@ const NewSong = ({ playList }: Props) => {
   return (
     <div className=''>
       <TitleSection title={playList?.title} />
-      <div className='py-2 px-8 xl:px-0 xl:w-[930px] lg:w-[700px] overflow-hidden  gap-2  mx-auto '>
+      <div className='py-2 px-8 lg:px-0 lg:w-[930px] lg:w-[700px] overflow-hidden  gap-2  mx-auto '>
         <Slider {...settings}>
           {playList?.items?.map((item, index) => (
             <NewSongItem key={item.encodeId} item={item} index={index} />

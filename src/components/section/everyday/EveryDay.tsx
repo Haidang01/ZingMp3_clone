@@ -11,7 +11,7 @@ const EveryDay = ({ playList }: Props) => {
   return (
     <div>
       <TitleSection title={playList?.title} />
-      <div className='grid px-3 xl:px-0 grid-cols-2  xl:grid-cols-4 gap-4 grid-row'>
+      <div className='grid px-3 lg:px-0 grid-cols-2  lg:grid-cols-4 gap-4 grid-row'>
         {playList?.items?.slice(0, 4).map(item => (
           <EveryDayItem key={item.encodeId} item={item} />
         ))}

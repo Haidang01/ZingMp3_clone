@@ -6,6 +6,7 @@ import { RiHeart3Line } from 'react-icons/ri';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
 import ImgSection from './ImgSection';
 import { useNavigate } from 'react-router-dom';
+import { truncateString } from '../../utils/string';
 
 type Props = {
   title: string;
@@ -17,7 +18,6 @@ const SectionItem: React.FC<Props> = ({ title, item }) => {
   return (
     <div onClick={() => navigate(`${item.link.split('.')[0]}`)}>
       <ImgSection item={item} />
-
       <div className='mt-3 min-h-[40px] '>
         <div className='text-secondary space-x-1 font-normal  text-[14px]'>
           {title === 'artist'
@@ -30,7 +30,7 @@ const SectionItem: React.FC<Props> = ({ title, item }) => {
                   {artist.name},
                 </a>
               ))
-            : item?.sortDescription}
+            : truncateString(item?.sortDescription, 35)}
         </div>
       </div>
     </div>

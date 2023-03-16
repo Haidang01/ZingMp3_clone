@@ -11,8 +11,6 @@ import Scrollbars from 'react-custom-scrollbars-2';
 
 const Public: React.FC = () => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -30,14 +28,14 @@ const Public: React.FC = () => {
         style={{ height: '100vh', width: '100vw' }}
       >
         <div className={` flex  w-full flex-auto  `}>
-          <div className=' xl:w-[240px]  fixed h-screen top-0 left-0 '>
+          <div className=' lg:w-[240px]  fixed h-screen top-0 left-0 '>
             <SideBar />
           </div>
-          <div className=' w-full   pl-[70px] xl:pl-[240px]  bg-[#170f23]  '>
+          <div className=' w-full   pl-[70px] lg:pl-[240px]  bg-[#170f23]  '>
             <div className=' sm:px-[45px] h-[70px] px-2  bg-[#170f23] sticky top-0 right-0 z-10 w-[100vw-70px] py-0 flex items-center'>
               <Header />
             </div>
-            <div className=' xl:px-[45px] min-h-screen w-full  overflow-y-auto overflow-x-hidden'>
+            <div className=' lg:px-[45px] min-h-screen w-full  overflow-y-auto overflow-x-hidden'>
               <Outlet />
             </div>
           </div>

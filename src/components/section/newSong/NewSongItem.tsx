@@ -20,7 +20,6 @@ const NewSongItem = ({ item, index }: Props) => {
       <div
         onClick={() => {
           dispatch(setCurSongId(item.encodeId));
-          dispatch(setPlayed(true));
         }}
       >
         <img

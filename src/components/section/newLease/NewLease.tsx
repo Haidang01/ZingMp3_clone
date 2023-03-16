@@ -29,12 +29,12 @@ const NewLease = ({ data }: Props) => {
   return (
     <div className='mt-10  px-2'>
       <TitleSection title={data?.title} />
-      <div className='flex sm:px-2 text-white gap-4 text-[12px]  font-[500] justify-start items-center'>
+      <div className='flex sm:px-2 text-white gap-4 text-[8px] lg:text-[12px]  font-[500] justify-start items-center'>
         <button
           onClick={() => setOptionNew('all')}
           className={` border ${
             optionNew === 'all' && 'bg-[#9b4de0]'
-          } rounded-xl py-[4px] border-[#ffffff1a] px-6`}
+          } rounded-xl py-[4px]  border-[#ffffff1a] w-[80px] lg:w-auto lg:px-6`}
         >
           TẤT CẢ
         </button>
@@ -42,7 +42,7 @@ const NewLease = ({ data }: Props) => {
           onClick={() => setOptionNew('vPop')}
           className={` border ${
             optionNew === 'vPop' && 'bg-[#9b4de0]'
-          } rounded-xl py-[4px] border-[#ffffff1a] px-6`}
+          } rounded-xl py-[4px] w-[80px] lg:w-auto lg:px-6 border-[#ffffff1a] `}
         >
           VIỆT NAM
         </button>
@@ -50,12 +50,12 @@ const NewLease = ({ data }: Props) => {
           onClick={() => setOptionNew('others')}
           className={` border ${
             optionNew === 'others' && 'bg-[#9b4de0]'
-          } rounded-xl py-[4px] border-[#ffffff1a] px-6`}
+          } rounded-xl py-[4px] w-[80px] lg:w-auto lg:px-6 border-[#ffffff1a] `}
         >
           QUỐC TẾ
         </button>
       </div>
-      <div className='flex justify-center sm:justify-around xl:justify-between mt-2'>
+      <div className='flex justify-center sm:justify-around lg:justify-between mt-2'>
         <div className=''>
           {dataRender?.slice(0, 4).map(item => (
             <SongItemComponent key={item.encodeId} song={item} />
@@ -66,7 +66,7 @@ const NewLease = ({ data }: Props) => {
             <SongItemComponent key={item.encodeId} song={item} />
           ))}
         </div>
-        <div className='hidden xl:block'>
+        <div className='hidden lg:block'>
           {dataRender?.slice(8, 12).map(item => (
             <SongItemComponent key={item.encodeId} song={item} />
           ))}

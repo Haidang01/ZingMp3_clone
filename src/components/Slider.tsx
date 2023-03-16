@@ -15,14 +15,12 @@ const Sliders = (props: Props) => {
 
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
-    height: window.innerHeight,
   });
 
   useEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight,
       });
     }
 
@@ -52,7 +50,7 @@ const Sliders = (props: Props) => {
     autoplaySpeed: 3000,
   };
   return (
-    <div className='py-4 flex-1  w-[65vw] xl:w-[70vw]  mx-auto pt-5 '>
+    <div className='py-4 flex-1  w-[65vw] lg:w-[70vw]  mx-auto pt-5 '>
       <Slider {...settings}>
         {banner?.map(item => (
           <div key={item?.banner} className='rounded-lg'>

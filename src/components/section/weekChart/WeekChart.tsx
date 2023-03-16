@@ -7,7 +7,7 @@ type Props = {
 
 const WeekChart = ({ chart }: Props) => {
   return (
-    <div className='flex px-3 xl:px-0 items-center justify-center gap-6'>
+    <div className='flex px-3 lg:px-0 items-center justify-center gap-6'>
       {chart.map(item => (
         <div key={item.banner} className=' rounded-md overflow-hidden'>
           <img
