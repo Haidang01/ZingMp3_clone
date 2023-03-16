@@ -13,7 +13,7 @@ function App() {
         <Route path='playlist/:title/:pid' element={<Album />} />
         <Route path='login' element={<Login />} />
         <Route path='search/:keyword' element={<Search />} />
-        {/* <Route path='*' element={<Home />} /> */}
+        <Route path='*' element={<Home />} />
       </Route>
     </Routes>
   );
