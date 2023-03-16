@@ -27,7 +27,7 @@ const SectionItem: React.FC<Props> = ({ title, item }) => {
                   href=''
                   key={artist.id}
                 >
-                  {artist.name},
+                  {truncateString(artist.name, 20)},
                 </a>
               ))
             : truncateString(item?.sortDescription, 35)}

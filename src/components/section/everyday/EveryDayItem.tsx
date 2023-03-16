@@ -19,7 +19,7 @@ const EveryDayItem = ({ item }: Props) => {
           <div className='text-white hover:text-[#c273ed] cursor-pointer font-bold text-[15px] my-1 mx-1'>
             {truncateString(item.title, 30)}
           </div>
-          {item?.artists.length > 3
+          {item?.artists?.length > 3
             ? item?.artists.slice(0, 3).map(artist => (
                 <a
                   className='hover:text-[#c273ed] hover:underline'

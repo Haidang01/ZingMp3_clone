@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 
 import { useGetSongsQuery } from '../redux/apis/Music/MusicApi';
 import { getHomes } from '../redux/features/home/homeSlice';
-import { useAppDispatch, useAppSelector } from '../redux/hook';
-import { RootState } from '../redux/store';
-import homeSlice from '../redux/features/home/homeSlice';
-import { setArtist } from '../redux/features/home/sectionSlice';
+import { useAppDispatch } from '../redux/hook';
 import Sliders from '../components/Slider';
 import { NewLease, Section } from '../components';
 import { useState } from 'react';
@@ -21,7 +18,6 @@ import {
   INewRelease,
   ISongTodaySection,
 } from '../interfaces/sections';
-import LoadingImg from '../components/Spinners/LoadingImg';
 import LoadingPage from '../components/Spinners/LoadingPage';
 
 const HomePage: React.FC = () => {
@@ -38,8 +34,6 @@ const HomePage: React.FC = () => {
   const [Top100, setTop100] = useState<IArtistSection | null>(null);
   const { data, isLoading } = useGetSongsQuery();
   const dispatch = useAppDispatch();
-  console.log(data);
-
   useEffect(() => {
     if (data) {
       const song = data[0].items;

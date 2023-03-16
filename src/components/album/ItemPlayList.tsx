@@ -79,7 +79,7 @@ const ItemPlayList: React.FC<any> = ({ song }) => {
         </div>
         <div className=''>
           <span className='flex items-center justify-between gap-2'>
-            <span className='flex  text-[10px] lg:text-[14px] font-light lg:font-[500]'>
+            <span className='flex text-[#ffffff80]  text-[10px] lg:text-[14px] font-light lg:font-[500]'>
               {song?.title && truncateString(song?.title, 23)}
             </span>
             {song.streamingStatus === 2 ? (

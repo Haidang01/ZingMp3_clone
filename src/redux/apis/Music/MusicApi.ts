@@ -16,7 +16,7 @@ export const homeApi = createApi({
       transformResponse: (response: any) => response.data.items,
     }),
     // ? Query: Get a single Song
-    getSong: builder.query<ISong, string>({
+    getSong: builder.query<any, string>({
       query(id) {
         return `infosong?id=${id}`;
       },
@@ -36,6 +36,12 @@ export const homeApi = createApi({
       },
       transformResponse: (response: any) => response.data,
     }),
+    searchSong: builder.query<any, string>({
+      query(key) {
+        return `search?keyword=${key}`;
+      },
+      transformResponse: (response: any) => response.data,
+    }),
   }),
 });
 
@@ -45,4 +51,5 @@ export const {
   useGetSongQuery,
   usePrefetch,
   useGetMusicQuery,
+  useSearchSongQuery,
 } = homeApi;

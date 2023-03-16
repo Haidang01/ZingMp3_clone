@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsArrowLeft, BsArrowRight, BsSearch } from 'react-icons/bs';
 import { FiSettings } from 'react-icons/fi';
 
 import chude from '../../assets/imgs/chude.png';
 import vip from '../../assets/imgs/vip.png';
+import { useSearchSongQuery } from '../../redux/apis/Music/MusicApi';
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
+  const [keyword, setKeyWord] = useState<string>('');
+  const navigate = useNavigate();
+  const hanldeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate(`search/keyword=${keyword}`);
+  };
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyWord(e.target.value);
+  };
   return (
     <div className='w-full   text-white h-full flex gap-1 items-center justify-between'>
       {/* left */}
@@ -17,7 +28,7 @@ const Header: React.FC = () => {
           <BsArrowRight className='w-[44px] h-[24px] text-[#56515f]' />
         </button>
         <form
-          action=''
+          onSubmit={hanldeSubmit}
           className='max-w-[400px] sm:w-[350px] lg:w-[430px] mx-3 '
         >
           <div className='bg-[#30283a] h-[40px] rounded-3xl w-full lg:w-[410px] flex'>
@@ -26,10 +37,12 @@ const Header: React.FC = () => {
             </button>
             <input
               type='text'
+              onChange={handleChangeInput}
               placeholder='Tìm kiếm bài hát, nghệ sĩ, lời bài hát...'
               className='bg-transparent hidden sm:block w-full text-[15px] outline-none text-white'
             />
             <input
+              onChange={handleChangeInput}
               type='text'
               placeholder='Tìm kiếm ...'
               className='bg-transparent sm:hidden w-full text-[15px] outline-none text-white'
