@@ -101,7 +101,7 @@ const Header: React.FC = () => {
         <img
           className='w-[40px] cursor-pointer h-[40px] object-cover  rounded-full '
           src={
-            'https://s120.avatar.talk.zdn.vn/7/b/1/0/3/120/216d297c4869ee1f86a6cccd66a15dd4.jpg'
+            'https://scontent.xx.fbcdn.net/v/t1.15752-9/335450925_226953483079559_2112156277775635357_n.jpg?stp=dst-jpg_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=aee45a&_nc_ohc=qW4upO_HHwEAX8Q2kT0&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQ62hpcsjzTdZkAK1tXszrmgkgaRpfaknlcEL2G09ZXQg&oe=643AA895'
           }
           alt=''
         />
