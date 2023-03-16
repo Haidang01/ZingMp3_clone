@@ -17,7 +17,7 @@ const Search = (props: Props) => {
   const { data, isFetching } = useSearchSongQuery(
     location.pathname.split('/')[2],
   );
-  console.log(data?.playlists);
+  console.log(data?.playlists, data);
 
   return (
     <div className='pb-[90px]'>
@@ -34,6 +34,12 @@ const Search = (props: Props) => {
           <div className=' px-2 text-xl lg:px-0 lg:text-2xl my-2 font-bold text-white'>
             Bài hát
           </div>
+
+          {!data.songs && (
+            <div className=' text-sm text-center my-5 text-[#ccc] lg:text-xl '>
+              Không có kết quả được tìm thấy
+            </div>
+          )}
           {data?.songs?.map((item: ISong) => (
             <ItemPlayList song={item} key={item.encodeId} />
           ))}
