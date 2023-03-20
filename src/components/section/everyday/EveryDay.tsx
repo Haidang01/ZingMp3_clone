@@ -8,8 +8,6 @@ type Props = {
 };
 
 const EveryDay = ({ playList }: Props) => {
-  console.log(playList);
-
   return (
     <div>
       <TitleSection title={playList?.title} />

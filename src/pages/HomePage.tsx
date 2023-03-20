@@ -36,6 +36,8 @@ const HomePage: React.FC = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     if (data) {
+      console.log(data);
+
       const song = data[0].items;
       dispatch(getHomes(song));
       setPlayListArtist(data[4]);
@@ -72,6 +74,7 @@ const HomePage: React.FC = () => {
           </section>
           {/* ==========lựa chọn hôm nay========= */}
           <section>
+            {' '}
             <ChooseToday playList={songToday} />
           </section>
           {/* ===========nghệ sĩ nổi bật========== */}
@@ -79,12 +82,9 @@ const HomePage: React.FC = () => {
             <Section title={'artistHot'} playList={artistHot} />
           </section>
           {/* ==========Radio============= */}
-          <section className='mt-12'>
-            <Radio playList={liveStream} />
-          </section>
           {/* =======nhạc mới mỗi ngày====== */}
           <section className='mt-10'>
-            <EveryDay playList={newEverday} />
+            {/* <EveryDay playList={newEverday} /> */}
           </section>
           {/* =========Week Chart========== */}
           <section className='mt-10'>
@@ -92,16 +92,14 @@ const HomePage: React.FC = () => {
           </section>
           {/* ===========top 100======== */}
           <section className='mt-10'>
-            <EveryDay playList={Top100} />
+            {/* <EveryDay playList={Top100} /> */}
           </section>
           {/* ===========Nhạc mới======== */}
           <section className='mt-10 w-full'>
-            <NewSong playList={newSong} />
+            {/* <NewSong playList={newSong} /> */}
           </section>
           {/* =======partner========== */}
-          <section>
-            <PartnerSection />
-          </section>
+          <section>{/* <PartnerSection /> */}</section>
         </div>
       )}
     </div>
